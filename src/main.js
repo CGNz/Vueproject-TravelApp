@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 //初始化显示统一，（不同浏览器初始样式不同）
-import './assets/styles/reset.css'
+import 'styles/reset.css'
 //1像素边框解决方案，（部分多倍屏显示会把边框翻倍）
-import './assets/styles/border.css'
+import 'styles/border.css'
+//引入iconfonts
+import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
