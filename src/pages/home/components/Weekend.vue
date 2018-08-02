@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">  
+            <li class="item border-bottom" v-for="item of list" :key="item.id">  
                 <div class="item-img-wrapper">
                      <img class="item-img" :src="item.imgUrl" />
                 </div>
@@ -21,17 +21,20 @@
 <script>
 export default {
     name: 'HomeWeekend',
+    props: {
+        list: Array
+    },
     data () {
         return {
-            recommendList: [{
+            weekendList: [{
                 id: '0001',
                 imgUrl: 'http://img1.qunarzz.com/sight/source/1505/eb/e4b181a6957c36.jpg_r_640x214_4abbdbc0.jpg',
-                title: '深圳环球数码科技大厦' ,
+                title: '深圳环球数码大厦' ,
                 desc: '嘿嘿嘿好大好大'
             },{
                 id: '0002',
                 imgUrl: 'http://img1.qunarzz.com/sight/source/1505/fa/ca65fde9677de2.jpg_r_640x214_4500e3ff.jpg',
-                title: '深圳环球数码科技大厦' ,
+                title: '深圳环球数码大厦' ,
                 desc: '哈哈哈好漂亮'
             }]
         }
@@ -45,7 +48,6 @@ export default {
     .item
         margin-bottom .1rem
     .recommend-title
-        margin-top .2rem
         line-height .8rem
         background: #eee
         text-indent .2rem
