@@ -12,7 +12,7 @@
 <script>
 export default {
     name: 'cityheader'
-}
+} 
 </script>
 
 <style lang="stylus" scoped>
