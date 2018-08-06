@@ -14,7 +14,7 @@
         <router-link to='/city'>
             <div class="header-right" >
                 <span class="iconfont">
-                    {{this.city}}&#xe62d;
+                    {{this.$store.state.city}}&#xe62d;
                 </span>
             </div>
         </router-link>
@@ -26,7 +26,7 @@
     export default {
         name:'HomeHeader',
         props:{
-            city: String
+           // city: String 城市通过vuex的state设定
         }
     }
 

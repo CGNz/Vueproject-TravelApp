@@ -6,7 +6,7 @@
                 <div class="button-list">
                     <div class="button-wrapper">
                         <div class="button">
-                            深圳
+                            {{this.$store.state.city}}
                         </div>
                     </div>
                 </div>
@@ -14,7 +14,7 @@
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper"  v-for="item of hot" :key="item.id">
+                    <div class="button-wrapper"  v-for="item of hot" :key="item.id" @click="handleCityClick(item.name)">
                         <div class="button">
                             {{item.name}}
                         </div>
@@ -26,7 +26,7 @@
             >
                 <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
-                    <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">
+                    <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id" @click="handleCityClick(innerItem.name)">
                         {{innerItem.name}}
                     </div>
                     
@@ -56,6 +56,14 @@ export default {
                 const element = this.$refs[this.letter][0]
                 this.scroll.scrollToElement(element)
             }
+        }
+    },
+    methods: {
+        handleCityClick (city) {
+            //alert(city)
+            //this.$store.dispatch('changeCity', city)
+            this.$store.commit('changeCity', city)
+            this.$router.push('/')
         }
     }
 }

@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
+//vuex
+import store from './store'
 //引入轮播插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
@@ -15,6 +17,7 @@ import 'styles/border.css'
 //引入iconfonts
 import 'styles/iconfont.css'
 
+
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
@@ -23,6 +26,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
