@@ -14,7 +14,7 @@
         <router-link to='/city'>
             <div class="header-right" >
                 <span class="iconfont">
-                    {{this.$store.state.city}}&#xe62d;
+                    {{this.city}}&#xe62d;
                 </span>
             </div>
         </router-link>
@@ -23,10 +23,14 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
         name:'HomeHeader',
         props:{
            // city: String 城市通过vuex的state设定
+        },
+        computed: {
+            ...mapState(['city'])
         }
     }
 
@@ -59,7 +63,8 @@
             color:#ccc
             border-radius : .1rem
         .header-right
-            width: 1.35rem
+            min-width: 1.04rem
+            padding 0 .1rem
             float: right 
             text-align :center
             color #fff
